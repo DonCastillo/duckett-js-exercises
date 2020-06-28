@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variable: String</title>
+    </head>
+    <body>
+        <h1>Elderflower</h1>
+        <div id="content">
+            <div id="title">Howdy <span id="name">friend</span>!</div>
+            <div id="note">Take a look around ...</div>
+        </div>
+        <script>
+            var username;
+            var message;
+
+            username = 'Molly';
+            message = 'See our upcoming range';
+
+            var elName = document.getElementById('name');
+            var elNote = document.getElementById('note');
+            elName.textContent = username;
+            elNote.textContent = message;
+        </script>
+    </body>
+</html>

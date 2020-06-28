@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variable: Boolean</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+        <style>
+            .true{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Elderflower</h1>
+        <div id="content">
+            <div class="message">Available: <span id="stock"><i class="fas fa-check"></i></span></div>
+            <div class="message">Shipping: <span id="shipping"><i class="fas fa-times"></i></span></div>
+            <div id="note">Sign-up to receive personalized offers!</div>
+        </div>
+        <script>
+            var inStock;
+            var shipping;
+            inStock = true;
+            shipping = false;
+
+            var elStock = document.getElementById('stock');
+            var elShip = document.getElementById('shipping');
+
+            elStock.className = inStock;
+            elShip.className = shipping;
+            
+        </script>
+    </body>
+</html>
