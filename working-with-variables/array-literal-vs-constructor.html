@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array Literal vs Array Constructor</title>
+        <style>
+            p {
+                margin:0;
+                font-size:15px;
+                font-family: arial, sans-serif;
+                text-align:center;
+            }
+            #row {
+                display:block;
+                padding:2px;
+            }
+            #block {
+                display: inline-block;
+                padding:15px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Array Literal vs Array Constructor</h1>
+        <script>
+            var rainbowLiteral = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            var rainbowConstructor = new Array('red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet');
+            
+            // row
+            for(let i = 0; i < rainbowLiteral.length; ++i){
+                document.write('<p id="row" style=background-color:' + rainbowLiteral[i] + ';>' + rainbowLiteral[i] + '</p>');
+            }
+            document.write('<br><br>');
+
+            // block
+            for(let i = 0; i < rainbowConstructor.length; ++i){
+                document.write('<p id="block" style=background-color:' + rainbowConstructor[i] + ';>' + rainbowConstructor[i] + '</p>');
+            }
+            
+            for(let i=0; i < rainbowLiteral.length; ++i){
+                rainbowLiteral[i] = (i % 2 == 0) ? 'whitesmoke' : 'grey';
+            } 
+
+            document.write('<br><br>');
+            for(let i = 0; i < rainbowLiteral.length; ++i){
+                document.write('<p id="block" style=background-color:' + rainbowLiteral[i] + ';>' + rainbowLiteral[i] + '</p>');
+            }
+        </script>
+    </body>
+</html>
