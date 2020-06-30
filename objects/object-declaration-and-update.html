@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Declaration and Update</title>
+        <style>
+            span.valid{
+                background-color: turquoise;
+                padding:1px 5px;
+            }
+            span.invalid{
+                background-color: darkred;
+                color:white;
+                padding:1px 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Object Declaration and Update</h1>    
+        <script>
+
+            function print(hotelObj) {
+                document.write(JSON.stringify(hotelObj));
+                document.write('<br><br>');
+                if (hotelObj.name == '' || hotelObj.hasOwnProperty('name') == false ) {
+                    document.write('<span class="invalid">No Name</span>');
+                } else {
+                    document.write('<span class="valid">' + hotelObj.name + '</span>');
+                }
+                document.write('<br>' + 'Rooms: ' + hotelObj['rooms'] + '<br>Booked: ' + hotelObj.booked + '<br>');
+                document.write('Available: ' + hotelObj.checkAvailability());
+                document.write('<br><br>');
+            }
+
+
+
+            // CREATING OBJECT THROUGH OBJECT LITERAL
+                var hotel = {
+                    name: 'Quay',
+                    rooms: 40,
+                    booked: 25,
+                    gym: true, 
+                    roomTypes: ['twin', 'double', 'suite'],
+                    checkAvailability: function() {
+                        return this.rooms - this.booked;
+                    }
+                }
+                print(hotel);
+
+
+            // CREATING AN OBJECT FROM SCRATCH (from an empty object)
+                var hotel2 = {};
+                hotel2.name = 'Bates';
+                hotel2.rooms = 12;
+                hotel2.booked = 3;
+                hotel2.gym = false;
+                hotel2.roomTypes = ['twin', 'double'];
+                hotel2.checkAvailability = function(){
+                    return this.rooms - this.booked;
+                }
+                print(hotel2);
+
+            // CREATING AN OBJECT FROM SCRATCH (using constructor notation)
+                var hotel3 = new Object();
+                hotel3.name = 'Holiday Inn';
+                hotel3.rooms = 100;
+                hotel3.booked = 75;
+                hotel3.gym = true;
+                hotel3.roomTypes = ['twin', 'double', 'suite'];
+                hotel3.checkAvailability = function(){
+                    return this.rooms - this.booked;
+                }
+                print(hotel3);
+
+                // update hotels data
+                delete hotel3.name;
+                print(hotel3);
+                hotel3.name = 'Sandman Hotel';
+                hotel3.booked = 0;
+                print(hotel3);
+                hotel2.name = '';
+                print(hotel2);
+                hotel2.name = 'Super8';
+                print(hotel2);
+
+
+        </script>
+    </body>
+</html>
