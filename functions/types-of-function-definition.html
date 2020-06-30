@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Types of Function Definition</title>
+        <style>body{font-family: Arial;}p{display:block;}</style>
+    </head>
+    <body>
+        <h1>Types of Function Definition</h1>
+
+        <h2>Function Declaration</h2>
+        <p id="result-1"></p>
+
+        <h2>Function Expression</h2>
+        <p id="result-2"></p>
+
+        <h2>Immediately Invoked Function Expressions (IIFE)</h2>
+        <p id="result-3"></p>
+        
+        <script>
+
+            // FUNCTION DECLARATION
+            // can invoke the function using its name
+            // can call a function before its declaration
+            function area(height, width) {
+                return height * width;
+            }
+
+            document.getElementById('result-1').textContent = area(2, 3);
+            
+
+            // FUNCTION EXPRESSION
+            // function is stored in a variable
+            // must call a function after its declaration
+            var area1 = function(height, width){
+                return height * width;
+            };
+
+            document.getElementById('result-2').textContent = area1(5, 5);
+
+            // IMMEDIATELY INVOKED FUNCTION
+            // function definition is executed once and immediately. No need to call for later use
+            var area2 = (function(height=4, width=3){
+                return height * width;
+            }());
+
+            document.getElementById('result-3').textContent = area2;
+
+
+
+        </script>
+    </body>
+</html>
