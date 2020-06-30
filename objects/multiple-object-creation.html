@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multiple Object Creation</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Multiple Object Creation</h1>    
+        <script>
+
+            function print(obj) {
+                var statement =  JSON.stringify(obj) + '<br>' + 'Available rooms: ' + obj.checkAvailability() + '<br><br>';
+                document.write(statement);
+            }
+            function Hotel(name, rooms, booked) {
+                this.name = name;
+                this.rooms = rooms;
+                this.booked = booked;
+                this.checkAvailability = function(){
+                    return this.rooms - this.booked;
+                } 
+            }
+
+            var holidayInn = new Hotel('Holiday Inn', 25, 5);
+            var sandmanHotel = new Hotel('Sandman Hotel', 100, 17);
+            var super8 = new Hotel('Super 8', 100, 99);
+
+            print(holidayInn);
+            print(sandmanHotel);
+            print(super8);
+
+        </script>
+    </body>
+</html>
