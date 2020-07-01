@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exploring 'this' in Different Context</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Exploring 'this' in Different Context</h1>    
+        <script>
+
+            var width = 90;
+
+            // refers to the width of the current context: global
+            document.write('Global scope: ');
+            document.write(this.width); // prints 90
+            document.write('<br>');
+
+            // global scope context == window object scope
+            document.write('Window obj: ');
+            document.write(window.width); // prints 90
+            document.write('<br>');
+
+            var rectangle = {
+                width: 10,
+                height: 20,
+                area: function(){
+                    return this.width * this.height;
+                },
+                getWidth: function(){
+                    return this.width;
+                },
+                print: (function(){
+                    document.write('IIFE within rectangle obj: ');
+                    document.write(this.width); // prints 90
+                    document.write('<br>');
+                }())
+            }
+
+            // refers to the width of the current context: rectangleArea obj
+            document.write('Invoke rectangle obj: ');
+            document.write(rectangle.getWidth()); // prints 10
+            document.write('<br>');
+
+            function square(){
+                var width = 5;
+                (function(){
+                    document.write('IIFE within a globally-scoped function: ')
+                    document.write(this.width); // prints 90
+                    document.write('<br>');
+                }());
+            }
+
+            square();
+
+        </script>
+    </body>
+</html>
