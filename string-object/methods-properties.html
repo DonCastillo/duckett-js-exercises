@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Methods & Properties</title>
+        <style>
+            strong{
+                background-color:lightpink;
+            }
+            p{
+                padding:2px;
+                display:block;
+                margin-top:10px;
+            }
+            body{
+                width:1000px;
+                height:1000px;
+            }
+            .sample{
+                background-color: orange;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>String Methods & Properties</h1>
+        <pre>
+            I think that I shall never see
+            A poem lovely as a tree.
+
+            A tree whose hungry mouth is prest
+            Against the earth’s sweet flowing breast;
+
+            A tree that looks at God all day,
+            And lifts her leafy arms to pray;
+
+            A tree that may in Summer wear
+            A nest of robins in her hair;
+
+            Upon whose bosom snow has lain;
+            Who intimately lives with rain.
+
+            Poems are made by fools like me,
+            But only God can make a tree.
+        </pre>
+
+        <script>
+            var pre = document.getElementsByTagName('pre')[0];
+            var text = pre.textContent;
+
+            document.write(text.length + '<br><br>');
+            document.write(text.toUpperCase() + '<br><br>');
+            document.write(text.toLowerCase() + '<br><br>');
+            
+            // changed everything to uppercase and make it look like the original format
+            var pre = document.createElement('pre');
+            document.body.appendChild(pre);
+            document.getElementsByTagName('pre')[1].textContent = text.toUpperCase();
+
+            var pre2 = document.createElement('pre');
+            document.body.appendChild(pre2);
+            
+            var reverseText = '';
+            for(let i = text.length; i > -1; i-- ) {
+                reverseText += text[i];
+            }
+
+            document.getElementsByTagName('pre')[2].textContent = reverseText.trim();
+        </script>
+    </body>
+</html>
