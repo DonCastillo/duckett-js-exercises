@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM Methods & Properties</title>
+        <style>
+            strong{
+                background-color:lightgreen;
+            }
+            p{
+                padding:2px;
+                display:block;
+                margin-top:10px;
+            }
+            body{
+                width:1000px;
+                height:1000px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>BOM Methods & Properties</h1>  
+        <p><strong>window.height:</strong>&nbsp;<span id="innerHeight">0</span></p>
+        <p><strong>window.width:</strong>&nbsp;<span id="innerWidth">0</span></p>
+        <p><strong>window.pageXOffset:</strong>&nbsp;<span id="pageXOffset">0</span></p>
+        <p><strong>window.pageYOffset:</strong>&nbsp;<span id="pageYOffset">0</span></p>
+        <p><strong>window.screenX:</strong>&nbsp;<span id="screenX">0</span></p>
+        <p><strong>window.screenY:</strong>&nbsp;<span id="screenY">0</span></p>
+        <p><strong>window.location:</strong>&nbsp;<span id="location">0</span></p>
+        <p><strong>window.history:</strong>&nbsp;<span id="history">0</span></p>
+        <p><strong>window.screen.width:</strong>&nbsp;<span id="screenW">0</span></p>
+        <p><strong>window.screen.height:</strong>&nbsp;<span id="screenH">0</span></p>
+        <p>window.height == window.screen.height</p>
+        <p>window.width == window.screen.width</p>
+        <button onclick='openWindow()'>Open New Window</button>
+        <button onclick='printWindow()'>Print</button>
+        <script>
+
+            // height of the window excluding the browser interface
+            document.getElementById('innerHeight').textContent = window.innerHeight;
+
+            // width of the window excluding the browser interface
+            document.getElementById('innerWidth').textContent = window.innerWidth;
+
+            // distance document has been scrolled horizontally
+            document.getElementById('pageXOffset').textContent = window.pageXOffset;
+
+            // distance document has been scrolled vertically
+            document.getElementById('pageYOffset').textContent = window.pageYOffset;
+
+            // x-coordinate of mouse pointer from the top left of the screen
+            document.getElementById('screenX').textContent = window.screenX;
+
+            // y-coordinate of mouse pointer from the top left of the screen
+            document.getElementById('screenY').textContent = window.screenY;
+
+            // y-coordinate of mouse pointer from the top left of the screen
+            document.getElementById('location').textContent = window.location;
+
+            //alert(window.document.getElementById('location').textContent);
+            //alert(window);
+            // number of pages in the history object
+            document.getElementById('history').textContent = window.history.length;
+
+            // screen width
+            document.getElementById('screenW').textContent = window.screen.width;
+
+            // screen height
+            document.getElementById('screenH').textContent = window.screen.height;
+
+            function openWindow(){
+                window.open('https://www.google.ca');
+            }
+
+            function printWindow(){
+                window.print();
+            }
+            
+        </script>
+    </body>
+</html>

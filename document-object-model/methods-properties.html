@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Methods & Properties</title>
+        <style>
+            strong{
+                background-color:lightpink;
+            }
+            p{
+                padding:2px;
+                display:block;
+                margin-top:10px;
+            }
+            body{
+                width:1000px;
+                height:1000px;
+            }
+            .sample{
+                background-color: orange;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM Methods & Properties</h1>  
+        <p><strong>document.title:</strong>&nbsp;<span id="title">0</span></p>
+        <p><strong>document.lastModified:</strong>&nbsp;<span id="lastModified">0</span></p>
+        <p><strong>document.URL:</strong>&nbsp;<span id="URL">0</span></p>
+        <p><strong>document.domain:</strong>&nbsp;<span id="domain">0</span></p>
+        <p><strong id="addText"></strong></p>
+        <p class="sample"></p>
+        <p class="sample"></p>
+        <p class="sample"></p>
+        <script>
+
+            // returns the title of the document object
+            document.getElementById('title').textContent = document.title;
+
+            // returns date or time the document was last modified
+            // mm/dd/yy 24:59:59
+            document.getElementById('lastModified').textContent = document.lastModified;
+
+            // returns the url address of the document
+            document.getElementById('URL').textContent = document.URL;
+
+            document.URL == window.location;
+
+            // returns the domain name of the url
+            document.getElementById('domain').textContent = document.domain;
+
+            document.write('<p><strong>This was printed straight from the script tags</strong></p>');
+            document.getElementById('addText').innerHTML = 'This was printed through document.getElementById("addText")';
+            document.querySelector('.sample').textContent = 'Access the first element with matching attributes';
+
+            document.body.appendChild(document.createElement('hr'));
+            document.body.appendChild(document.createTextNode('Text node created and appended to the body'));
+
+
+            
+        </script>
+    </body>
+</html>
