@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>True or False</title>
+        <style>
+            p{
+                display:block;
+                font-size:17px;
+                margin:10px 0;
+            }
+            .TRUE{
+                background-color: lightseagreen;
+            }
+            .FALSE{
+                background-color: palevioletred;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>True or False</h1>
+        <script>
+            function trueOrFalse(statement) {
+                var value;
+                if(statement) {
+                    value = 'TRUE';
+                } else {
+                    value = 'FALSE';
+                }
+                return document.write("<p class='" + value + "'>" + statement + "\t\t=>" + value + "</p>");
+
+            }
+
+            // true
+            trueOrFalse(true);
+            trueOrFalse(1);
+            trueOrFalse('carrot');
+            trueOrFalse(10/5);
+            trueOrFalse(10/-5);
+            trueOrFalse('true');
+            trueOrFalse('1');
+            trueOrFalse('0');
+            trueOrFalse('false');
+
+            // false
+            trueOrFalse(false);
+            trueOrFalse(0);
+            trueOrFalse('');
+            trueOrFalse(''+'');
+            trueOrFalse(10/'score');
+            trueOrFalse();
+
+        </script>
+    </body>
+</html>
