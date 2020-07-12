@@ -83,9 +83,14 @@
             var mexico = document.getElementById('mexico');
             var boldEl = mexico.firstChild;
             var boldContent = boldEl.firstChild;
-            document.write( boldContent.nodeValue );
+            document.write( boldContent.nodeValue + '<br><br>' );
             boldEl.removeChild(boldContent);    // remove a child node which is the textnode
             boldEl.textContent = 'Mexico City,'; // add a text using textContent
+
+            // access the h1 element from boldContent
+            var h1Text = boldEl.parentNode.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.textContent;
+            document.write( h1Text ); // h1 textContent
+            
 
         </script>
     </body>
