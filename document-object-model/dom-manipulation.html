@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Manipulation</title>
+        <style>
+        li{
+            margin:10px 0;
+        }
+        .asia{
+            background-color:lightsalmon;
+        }
+        .north-america{
+            background-color:lightgreen;
+        }
+        /* #manila b{
+            display:none;
+        } */
+        .hide{
+            display:none;
+        }
+        .colonized{
+            background-color:grey;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>DOM Manipulation</h1>
+        <h2>Countries and Capitals</h2>
+        <ul class="countries">
+            <li id="ottawa" class="north-america"><b>OTTAWA,</b> Canada</li>
+            <li id="washington" class="north-america"><b>WASHINGTON D.C.,</b> United States of America</li>
+            <li id="mexico" class="north-america"><b>MEXICO,</b> Mexico</li>
+            <li id="bangkok" class="asia"><b>BANGKOK,</b> Thailand</li>
+            <li id="manila" class="asia"><b class="hide">MANILA,</b> Philippines</li>
+            <li id="kuala-lumpur" class="asia"><b>KUALA LUMPUR,</b> Malaysia</li>
+            <li id="jakarta" class="asia"><b>JAKARTA,</b> Indonesia</li>
+        </ul>
+
+        <script>
+            // changed styling of Canada using getElementById()
+            document.getElementById('ottawa').setAttribute('style', 'font-size:30px; text-decoration:underline; ');
+            
+            // display 'OTTAWA, Canada'
+            // querySelector always returns the first matching element even if multiple elements matched
+            var allNorthAmerica = document.querySelector('li.north-america').innerHTML;
+            document.write( allNorthAmerica + '<br><br>' );
+
+            // select all the asian countries
+            var asia = document.getElementsByClassName('asia');
+            document.write( asia[0].innerHTML + '<br>' );    // get the child elements (including/applying the mark-up)
+            document.write( asia[0].textContent + '<br>' );  // get the child elements (just the text, no mark-up)
+            document.write( asia[0].innerText + '<br><br>');     // like textContent
+            
+            document.write( asia[1].textContent + '<br>' );   // get the textContent, just the text from the source code
+            document.write( asia[1].innerText + '<br><br>' ); // get the text as per the styling. text hidden by CSS will not be displayed
+
+            // select all the li elements
+            listItems = document.getElementsByTagName('li');
+            document.write( listItems + '<br>'); // a nodelist is an object / collection
+            document.write (listItems.length + '<br><br>'); // number of items/node/elements in the collection
+
+            // select all even-numbered li element node
+            var oddItems = document.querySelectorAll('li:nth-child(even)');
+            for(var i = 0; i < oddItems.length; ++i) {
+                var element = document.createElement('div');    // create an element
+                var text = document.createTextNode(' (even)');  // create a text node
+                var node = element.appendChild(text); // append text node to this element node
+                oddItems.item(i).appendChild(node);  // append the node to each even-numbered list
+            }
+            
+            var ph = document.getElementById('manila');
+            document.write( ph.className + '<br>');
+            ph.className += ' colonized'; // append a new class to the existing class to trigger css rule
+            document.write( ph.hasAttribute('class') + '<br>'); // check if the element node has a given attribute
+            document.write( ph.getAttribute('class') + '<br>'); // display all the value of the given attribute
+
+            var phText = ph.firstChild.nextSibling;
+            document.write( phText.nodeValue ); // display the text of this element
+            phText.nodeValue = ' China'; // update text
+            document.write('<br>');
+            ph.firstChild.className = '';  // remote all associated elements   
+            
+            var mexico = document.getElementById('mexico');
+            var boldEl = mexico.firstChild;
+            var boldContent = boldEl.firstChild;
+            document.write( boldContent.nodeValue );
+            boldEl.removeChild(boldContent);    // remove a child node which is the textnode
+            boldEl.textContent = 'Mexico City,'; // add a text using textContent
+
+        </script>
+    </body>
+</html>
