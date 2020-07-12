@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Short Circuit Values</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Short Circuit Values</h1>
+        <script>
+            function trueOrFalse(statement) {
+                var value;
+                if(statement) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // display alternate string
+            var name = 'Don';
+            document.write( name || 'John' );   // displays Don
+            document.write('<br>');
+
+            name = ''
+            document.write( name || 'John' );   // displays John
+            document.write('<br>');
+
+            name = 'Don'
+            document.write( name || '' );   // displays Don
+            document.write('<br>');
+
+            name = false
+            document.write( name || 'John' );   // displays false
+            document.write('<br>');
+
+            name = 'Don';
+            document.write( name && 'John' );   // displays John
+            document.write('<br>');
+
+            name = false;
+            document.write( name && 'John' );   // displays John
+            document.write('<br>');
+            
+            name = false;
+            document.write( name && 0 );   // displays 0
+            document.write('<br>');
+
+        </script>
+    </body>
+</html>
