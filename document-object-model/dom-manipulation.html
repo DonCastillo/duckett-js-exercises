@@ -12,6 +12,9 @@
         .north-america{
             background-color:lightgreen;
         }
+        .europe{
+            background-color:lightpink;
+        }
         /* #manila b{
             display:none;
         } */
@@ -90,6 +93,34 @@
             // access the h1 element from boldContent
             var h1Text = boldEl.parentNode.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.textContent;
             document.write( h1Text ); // h1 textContent
+
+            // insert a new country and capital at the end of the list
+            var ul = document.getElementsByTagName('ul')[0];
+            
+            // using innerHTML
+            ul.innerHTML += '<li id="london" class="europe"><b>London, </b>United Kingdom</li>';
+            ul.innerHTML += '<li id="paris" class="europe"><b>Paris, </b>France</li>';
+
+            // using DOM manipulation
+            var li = document.createElement('li');
+            var b = document.createElement('b');
+            li.id = 'berlin';
+            li.className = 'europe';
+            b.appendChild( document.createTextNode('Berlin, ') );
+            li.appendChild( b );
+            li.appendChild( document.createTextNode('Germany') );
+            ul.appendChild( li );
+
+            // insert a new country and capital at the beginning of the list
+
+            // using the insertBefore method
+            var beginningLI = document.createElement('li');
+            var beginningB = document.createElement('b');
+            beginningLI.setAttribute('id', 'madrid');
+            beginningLI.setAttribute('class', 'europe');
+            beginningLI.appendChild( ( beginningB.appendChild( document.createTextNode('Madrid, ') ) ) );
+            beginningLI.appendChild( document.createTextNode(' Spain') );
+            ul.insertBefore( beginningLI, document.getElementById('ottawa') );
             
 
         </script>
