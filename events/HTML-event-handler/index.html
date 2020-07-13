@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>HTML Event Handler</title>
+        <style>#feedback{color:red;}</style>
+    </head>
+    <body>
+        <form method="post" action="http://www.example.org/register">
+            <label for="username">Create a username: </label>
+            <input type="text" id="username" onblur="checkUsername()">
+            <div id="feedback"></div>
+
+            <label for="password">Create a password: </label>
+            <input type="password" id="password">
+            <br>
+            <input type="submit" value="Sign up!" />
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>
