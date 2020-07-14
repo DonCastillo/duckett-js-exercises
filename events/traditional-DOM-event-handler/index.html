@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Traditional DOM Event Handlers</title>
+        <style>
+            .parent{
+                width:100%;
+                position:relative;
+                height:100px;
+            }
+            .bar{
+                height:35px;
+                margin-bottom:15px;
+                transition: all 1s ease;
+                position:absolute;
+                width:0%;
+                display:block;
+            }
+            .left{
+                background-color:blue;
+                left:0;
+                top:0;
+            }
+            .right{
+                background-color:red;
+                right:0;
+                bottom:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="bar left"></div>
+            <div class="bar right"></div>
+        </div>
+       <button>Click Me!</button>
+        <script src="script.js"></script>
+    </body>
+</html>
