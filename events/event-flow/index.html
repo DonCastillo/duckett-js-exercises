@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Event Flow & Event Object</title>
+        <style>
+            div{
+                display:block;
+                padding:35px;
+                border:2px solid black;
+            }
+            .div-6,
+            .div-3{
+                margin:10px;
+                max-width:80%;
+                min-width:410px;
+                background-color:lightcoral;
+            }
+            .div-1{
+                background-color:lightblue;
+            }
+            .div-2{
+                background-color: lightgreen;
+            }
+            .div-4{
+                background-color:lightgray;
+            }
+            .div-5{
+                background-color:lightseagreen;
+            }
+            .div-6{
+                background-color:lightgoldenrodyellow
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Event Flow & Event Object</h1>
+        <div class="div-3">
+            RED
+            <div class="div-2">
+                GREEN
+                <div class="div-1">
+                    BLUE
+                </div>
+            </div>
+        </div>
+
+        <div class="div-6">
+            YELLOW
+            <div class="div-5">
+                SEA GREEN
+                <div class="div-4">
+                    GRAY
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
