@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Focus & Blur Events</title>
+        <style>
+            #parent{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:row;  
+            }
+            #parent a{
+                width:200px;
+                height:200px;
+                border:2px solid black;
+                text-decoration:none;
+                font-size:25px;
+                color:white;
+                display:block;
+                text-align:center;
+                display:flex;
+                justify-content: center;
+                align-items: center;;
+            }
+            #child-1{ background-color: red;}
+            #child-2{ background-color: green;}
+            #child-3{ background-color: blue;}
+            #child-4{ background-color: orange;}
+            #child-5{ background-color: violet;}
+            #focus{ background-color: lightblue; padding:10px; }
+            #blur{ background-color: lightcoral; padding:10px; }
+            #description div{ display:inline-block; }
+
+        </style>
+    </head>
+    <body>
+        <div id="parent">
+            <a href="" id="child-1">RED</a>
+            <a href="" id="child-2">GREEN</a>
+            <a href="" id="child-3">BLUE</a>
+            <a href="" id="child-4">ORANGE</a>
+            <a href="" id="child-5">VIOLET</a>
+        </div>
+        <div id='description'></div>
+        <script src="script.js"></script>
+    </body>
+</html>
