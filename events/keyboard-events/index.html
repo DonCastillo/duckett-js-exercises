@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Keyboard Events</title>
+        <style>
+            textarea{
+                height:150px;
+            }
+            #charOutput{
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size:25px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" action="http://www.example.org/register">
+
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <div id="name-msg"></div>
+            
+            <br><br>
+
+            <label for="message">Message</label>
+            <textarea></textarea>
+
+            <label for="text">Text to display</label>
+            <textarea></textarea>
+            <div id="charOutput"></div>
+
+        </form>
+        <div id="action"></div>
+        <script src="script.js"></script>
+    </body>
+</html>
