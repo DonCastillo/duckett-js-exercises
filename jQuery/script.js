@@ -29,4 +29,38 @@ $(function(){
         valueOfElement.append( ` .(${indexInArray + 1}` );
     });
 
+    let newItems = '';
+    let itemWords = ['six', 'seven', 'eight', 'nine', 'ten'];
+    for( const numWord of itemWords ){
+        //console.log(numWord);
+        newItems += `<li class="items" id="${numWord}">${ numWord[0].toUpperCase() + numWord.substr(1) }</li>`
+    }
+    $('#list').append(newItems);
+
+    /**
+     *      .clone()        - creates a copy of the matched element
+     *      .detach()       - removes element and keeps a copy of them in the memory
+     *      .empty()        - removes child nodes and descendants from any in the matched set
+     *      .unwrap()       - removes parents of matched set, leaving matched elements
+     *      .add()          - add new content to the items in the existing selection and places the resulting content in a new jQuery object
+     */
+
+    el = $('#six');
+    clonedEl = el.clone();
+    clonedEl.remove();
+    el.detach();
+    $('#list').append(el);
+
+    let seven = $('#seven');
+    seven.append('<div style="background-color:yellow">Inside seven</div>');
+    seven.append('<div style="background-color:orange">Another Inside seven</div>');
+    seven.empty();
+
+    let eight = $('#eight');
+    eight.append('<div id="inside-eight" style="background-color:violet; margin:20px; padding:20px;">Inside Eight</div>');
+    eight.find('#inside-eight').append('<div id="inside-inside-eight" style="background-color:turquoise; margin:20px; padding:20px;">Inside Inside Eight</div>');
+
+    $('#inside-inside-eight').unwrap();
+    //console.log($('#nine').add('<h1>Nine Inside</h1>'));
+
 });
