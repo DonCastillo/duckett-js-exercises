@@ -32,7 +32,6 @@ $(function(){
     let newItems = '';
     let itemWords = ['six', 'seven', 'eight', 'nine', 'ten'];
     for( const numWord of itemWords ){
-        //console.log(numWord);
         newItems += `<li class="items" id="${numWord}">${ numWord[0].toUpperCase() + numWord.substr(1) }</li>`
     }
     $('#list').append(newItems);
@@ -61,7 +60,7 @@ $(function(){
     eight.find('#inside-eight').append('<div id="inside-inside-eight" style="background-color:turquoise; margin:20px; padding:20px;">Inside Inside Eight</div>');
 
     $('#inside-inside-eight').unwrap();
-    //console.log($('#nine').add('<h1>Nine Inside</h1>'));
+    $('#nine').add('<h1>Nine Inside</h1>');
 
     /**
      *      .attr()         - get/set a specified attribute and its value
@@ -86,5 +85,42 @@ $(function(){
         'text-align': 'center',
         'letter-spacing': '5rem'
     });
+
+    /**
+     *      .find()         - all elements within current selection that match selector
+     *      .closest()      - nearest ancestor (not just parent) that matches selector
+     *      .parent()       - direct parent of current selection
+     *      .parents()      - all parents of current selection (including direct parent, grandparents, great grandparents)
+     *      .children()     - all children of current selection
+     *      .siblings()     - all siblings of current selection
+     *      .next()         - next sibling
+     *      .nextAll()      - all subsequent siblings
+     *      .prev()         - previous sibling
+     *      .prevAll()      - all previous siblings
+     */
+    $('#content').find('#bottom').find('ul li.before-node').remove();
+    $('li').closest('#content').css({'background-color': 'whitesmoke', 'padding': '25px'});
+    $('#bottom').parent().css({'border': '1px solid black', 'margin-bottom': '40px'});
+    console.log($('li').parents());
+        /** displays:
+         *      ul#planets
+         *      div#bottom
+         *      div#content
+         *      ul#list
+         *      div.container
+         *      body
+         *      html
+         */
+    console.log($('#list, #planets').children());   // displays combined children
+    $('#top').siblings().css({'background-color': 'lightgrey'});
+    let nextJupiter = $('#jupiter').next();
+    let prevJupiter = $('#jupiter').prev();
+    nextJupiter.css({'color': 'red'}); 
+    prevJupiter.css({'color': 'blue'});
+    nextJupiter.nextAll().prepend('&nbsp;&nbsp;&nbsp;&nbsp;');
+    prevJupiter.prevAll().prepend('&nbsp;&nbsp;&nbsp;&nbsp;');
+    
+
+
 
 });
