@@ -63,4 +63,28 @@ $(function(){
     $('#inside-inside-eight').unwrap();
     //console.log($('#nine').add('<h1>Nine Inside</h1>'));
 
+    /**
+     *      .attr()         - get/set a specified attribute and its value
+     *      .removeAttr()   - removes an attribute
+     *      .addClass()     - add class
+     *      .hasClass()     - does the element has this class? true/false
+     *      .removeClass()  - remove class
+     *      .css()          - set css style to a specific element
+     */
+
+     let nine = $('#nine');
+     console.log(nine.attr('id'));  // displays id
+     nine.attr('data-name', 'nine word');
+     nine.removeAttr('id');
+     nine.addClass('anotherclass');
+     console.log(nine.hasClass('anotherclass')); // displays true
+     nine.removeClass('anotherclass');
+     console.log(nine.hasClass('anotherclass')); // displays false
+     nine.css({
+        'font-size': '30px',
+        'font-weight': 'bolder',
+        'text-align': 'center',
+        'letter-spacing': '5rem'
+    });
+
 });
