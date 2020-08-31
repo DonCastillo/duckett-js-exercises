@@ -119,7 +119,25 @@ $(function(){
     prevJupiter.css({'color': 'blue'});
     nextJupiter.nextAll().prepend('&nbsp;&nbsp;&nbsp;&nbsp;');
     prevJupiter.prevAll().prepend('&nbsp;&nbsp;&nbsp;&nbsp;');
-    
+
+
+    /**
+     *      .filter()           - finds elements in the matched set that in turn match a second selector
+     *      .not() or :not()    - finds elements that do not match the selector
+     *      .has() or :has()    - finds elements from the matched set that have a descendant that matches the selector
+     *      .is()               - checks whether current selection matches a condition (returns a boolean)
+     *      :contains()         - selects all elements that contain the text specified (parameter is case sensitive)
+     */
+    el = $('.items');
+    el.css({'text-decoration': 'underline'});
+    el.filter('.before-node').append('**');
+    el.not('.before-node').not('#seven, #eight, #nine, #ten, #six, [data-name="nine word"]').append('<span>&nbsp;&nbsp;Not a Before Node</span>');
+    // can add multiple elements in the selector separated by comma 
+    $('.items:not(.after-node #seven, #eight, #nine, #ten, #six)').prepend('<span>//</span>');
+    $('#list li').has('span').append('  (with nested )');
+    console.log($('#list li').is('#list li'));  // returns true
+    console.log($('#list').is('#planets')); // returns false
+    $('#list li:contains("Three")').css({'text-align': 'right'});
 
 
 
