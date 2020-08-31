@@ -139,6 +139,26 @@ $(function(){
     console.log($('#list').is('#planets')); // returns false
     $('#list li:contains("Three")').css({'text-align': 'right'});
 
+    /**
+     *      .eq()       - the element that matches the index number
+     *      :lt()       - elements with an index less than the number specified
+     *      :gt()       - elements with an index greater than the number specified
+     */
+    
+    let thirdPlanet = $('#planets li').eq(3);
+    thirdPlanet.text( thirdPlanet.text().toUpperCase() );
+
+    let lessThanThird = $('#planets li:lt(3)');
+    lessThanThird.each(function() { 
+         $(this).text( $(this).text().toLowerCase() );
+         $(this).css({'font-size': '20px', 'font-weight': 'bolder'});
+    });
+
+    let moreThanThird = $('#planets li:gt(3)');
+    moreThanThird.each(function(){
+        $(this).append(' $$$');
+    });
+
 
 
 });
