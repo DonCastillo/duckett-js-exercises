@@ -159,6 +159,32 @@ $(function(){
         $(this).append(' $$$');
     });
 
+    /**
+     *      .height()       - height
+     *      .width()        - width
+     *      .innerHeight()  - height + padding
+     *      .innerWidth()   - width + padding
+     *      .outerHeight()  - height + padding + border
+     *      .outerWidth()   - width + padding + border
+     *      .outerHeight(true)  - height + padding + border + margin
+     *      .outerWidth(true)   - width + padding + border + margin
+     */
+    let square = $('#square');
+    let squareInfo = $('#square-info');
+    let squareContent = '';
+    squareContent += `<div>PADDING: ${ 20 }</div>`;
+    squareContent += `<div>BORDER: ${ 10 }</div>`;
+    squareContent += `<div>HEIGHT: ${ square.height() }</div>`;
+    squareContent += `<div>WIDTH: ${ square.width() }</div>`;
+    squareContent += `<div>INNER HEIGHT: ${ square.innerHeight() }</div>`;
+    squareContent += `<div>INNER WIDTH: ${ square.innerWidth() }</div>`;
+    squareContent += `<div>OUTER HEIGHT: ${ square.outerHeight() }</div>`;
+    squareContent += `<div>OUTER WIDTH: ${ square.outerWidth() }</div>`;
+    squareContent += `<div>OUTER HEIGHT(TRUE): ${ square.outerHeight(true) }</div>`;
+    squareContent += `<div>OUTER WIDTH(TRUE): ${ square.outerWidth(true) }</div>`;
+
+    squareInfo.html( squareContent );
+
 
 
 });
