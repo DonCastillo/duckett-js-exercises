@@ -169,9 +169,18 @@ $(function(){
      *      .outerHeight(true)  - height + padding + border + margin
      *      .outerWidth(true)   - width + padding + border + margin
      */
+
     let square = $('#square');
     let squareInfo = $('#square-info');
     let squareContent = '';
+
+    function changeSize(){
+        $('#doc-width').text( $(document).width() );
+        $('#doc-height').text( $(document).height() );
+        $('#win-width').text( $(window).width() );
+        $('#win-height').text( $(window).height() );
+    }
+
     squareContent += `<div>PADDING: ${ 20 }</div>`;
     squareContent += `<div>BORDER: ${ 10 }</div>`;
     squareContent += `<div>HEIGHT: ${ square.height() }</div>`;
@@ -182,9 +191,11 @@ $(function(){
     squareContent += `<div>OUTER WIDTH: ${ square.outerWidth() }</div>`;
     squareContent += `<div>OUTER HEIGHT(TRUE): ${ square.outerHeight(true) }</div>`;
     squareContent += `<div>OUTER WIDTH(TRUE): ${ square.outerWidth(true) }</div>`;
-
+    squareContent += `<div>DOCUMENT WIDTH: <span id="doc-width">${ $(document).width() }</span></div>`;
+    squareContent += `<div>DOCUMENT HEIGHT: <span id="doc-height">${ $(document).height() }</span></div>`;
+    squareContent += `<div>WINDOW WIDTH: <span id="win-width">${ $(window).width() }</span></div>`;
+    squareContent += `<div>WINDOW HEIGHT: <span id="win-height">${ $(window).height() }</span></div>`;
+    $(window).on('resize', changeSize );
+    $(document).on('resize', changeSize );
     squareInfo.html( squareContent );
-
-
-
 });
