@@ -181,6 +181,10 @@ $(function(){
         $('#win-height').text( $(window).height() );
     }
 
+    function scroll(){
+        $('#scrolltop').text( $(window).scrollTop() );
+    }
+
     squareContent += `<div>PADDING: ${ 20 }</div>`;
     squareContent += `<div>BORDER: ${ 10 }</div>`;
     squareContent += `<div>HEIGHT: ${ square.height() }</div>`;
@@ -198,4 +202,15 @@ $(function(){
     $(window).on('resize', changeSize );
     $(document).on('resize', changeSize );
     squareInfo.html( squareContent );
+
+    /**
+     *      .offset()       - get/set coordinates of the element relative to the top left-hand corner of the document object
+     *      .position()     - get/set coordinates of the element to any ancestor that has been taken out of normal flow 
+     *                      - (using CSS box offsets). If no ancestor is out of normal flow, it will return the same as .offset() 
+     */
+
+    squareInfo.append(`<div>TOP POS OF SQUARE: ${ square.offset().top }</div>`);
+    squareInfo.append(`<div>LEFT POS OF SQUARE: ${ square.offset().left }</div>`);
+    squareInfo.append(`<div id="fixed">SCROLL-TOP OF WINDOW: <span id="scrolltop">${ $(window).scrollTop() }</span></div>`);
+    $(window).on('scroll', scroll);
 });
