@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading HTML with AJAX</title>
+    <style>
+        body{
+            font-family:monospace;
+        }
+        #colors{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #colors div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height:100px;
+            width:100px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 700ms ease;
+            color: black;
+            cursor: pointer;
+        }
+        .hovered{
+            background-color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loading HTML with AJAX</h1>
+    <div id="colors"></div>
+    <script src="script.js"></script>
+</body>
+</html>
