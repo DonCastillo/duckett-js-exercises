@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<countries>
+    <country>
+        <name>Canada</name>
+        <capital>Ottawa</capital>
+        <continent>North America</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/ca.svg</flag>
+    </country>
+    <country>
+        <name>United States of America</name>
+        <capital>Washington D.C.</capital>
+        <continent>North America</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/us.svg</flag>
+    </country>
+    <country>
+        <name>Mexico</name>
+        <capital>Mexico City</capital>
+        <continent>North America</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/mx.svg</flag>
+    </country>
+    <country>
+        <name>United Kingdom</name>
+        <capital>London</capital>
+        <continent>Europe</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/gb.svg</flag>
+    </country>
+    <country>
+        <name>France</name>
+        <capital>Paris</capital>
+        <continent>Europe</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/fr.svg</flag>
+    </country>
+    <country>
+        <name>India</name>
+        <capital>New Delhi</capital>
+        <continent>Asia</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/in.svg</flag>
+    </country>
+    <country>
+        <name>China</name>
+        <capital>Beijing</capital>
+        <continent>Asia</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/cn.svg</flag>
+    </country>
+    <country>
+        <name>Japan</name>
+        <capital>Tokyo</capital>
+        <continent>Asia</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/jp.svg</flag>
+    </country>
+    <country>
+        <name>Philippines</name>
+        <capital>Manila</capital>
+        <continent>Asia</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/ph.svg</flag>
+    </country>
+    <country>
+        <name>Australia</name>
+        <capital>Canberra</capital>
+        <continent>Oceania</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/au.svg</flag>
+    </country>
+    <country>
+        <name>New Zealand</name>
+        <capital>Wellington</capital>
+        <continent>Oceania</continent>
+        <flag>https://hatscripts.github.io/circle-flags/flags/nz.svg</flag>
+    </country>
+
+</countries>
