@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Cases</title>
+    <style>
+        body{
+            font-family: monospace;
+            margin-top:0;
+            margin-bottom:0;
+        }
+        h1, form{
+            margin:0;
+        }
+        .nav{
+            width:100%;
+            background-color: whitesmoke;
+            transition: position 200ms ease;
+        }
+        .container{
+            width:100%;
+            height:auto;
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        .container .country {
+            flex-basis: 15%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-align:right;
+            margin-right:25px;
+        }
+        .container .figures {
+            flex-basis: 85%;
+        }
+        .graph {
+            margin-right:1rem;
+        }
+        .cases, .deaths {
+            display: flex;
+        }
+        .cases .graph {
+            background-color: red;
+        }
+        .deaths .graph {
+            background-color: black;
+        }
+        form{
+            margin-bottom: 2rem;
+        }
+        form div{
+            display: flex;
+            justify-content:flex-start;
+            align-items: center;
+        }
+        form input[type="radio"]{
+            margin-right:1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h1>COVID-19 Cases as of Dec. 24, 2020</h1>
+        <form action="">
+            <div>
+                <input type="radio" name="sort" id="by_death">
+                <label for="by_death">Sort by Death</label>
+            </div>
+            <div>
+                <input type="radio" name="sort" id="by_case">
+                <label for="by_case">Sort by Case</label>
+            </div>
+        </form>
+    </div>
+    
+    <div id="data"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
